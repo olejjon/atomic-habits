@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'users.apps.UsersConfig',
     'mailing.apps.MailingConfig',
     'homestart.apps.HomeConfig',
+
 ]
 
 MIDDLEWARE = [

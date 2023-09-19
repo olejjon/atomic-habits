@@ -18,7 +18,6 @@ def calculate_next_send_time(frequency, last_send_time):
 
 
 def process_pending_mailings():
-    print('sdfsdfsdfdf')
     now = datetime.now()
     pending_mailings = Mailing.objects.filter(
         mailing_time__lte=now,
