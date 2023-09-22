@@ -46,6 +46,7 @@ def process_pending_mailings():
     pending_mailings = Mailing.objects.all()
 
     for mailing in pending_mailings:
+        print(mailing)
         next_send_time = calculate_next_send_time(mailing.frequency, mailing.mailing_time)
 
         match mailing.status:

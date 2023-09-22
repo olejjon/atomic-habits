@@ -1,4 +1,5 @@
 from apscheduler.schedulers.background import BackgroundScheduler
+from apscheduler.schedulers.blocking import BlockingScheduler
 from apscheduler.triggers.interval import IntervalTrigger
 from django.core.management import BaseCommand
 
@@ -10,11 +11,11 @@ logger = logging.getLogger(__name__)
 
 
 def start_scheduler():
-    scheduler = BackgroundScheduler(timezone=settings.TIME_ZONE)
+    scheduler = BlockingScheduler(timezone=settings.TIME_ZONE)
 
     scheduler.add_job(
         process_pending_mailings,
-        trigger=IntervalTrigger(minutes=1),
+        trigger=IntervalTrigger(seconds=10),
         id="process_pending_mailings",
         max_instances=1,
         replace_existing=True,
