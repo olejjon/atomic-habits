@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-6e#fh1pnnv6&b)-*xlt@141f&k_%)2czl12*_a@ov3ceux4(#f'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -86,7 +86,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'mailing',
         'USER': 'postgres',
-        'PASSWORD': '123' # os.getenv('PASSWORD_POSTGRES'),
+        'PASSWORD': os.getenv('PASSWORD_POSTGRES'),
     }
 }
 
@@ -142,8 +142,8 @@ LOGIN_URL = '/'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.yandex.ru'
 EMAIL_PORT = 465
-EMAIL_HOST_USER = 'Lera91111@yandex.ru'  # os.getenv('EMAIL_HOST_USER')
-EMAIL_HOST_PASSWORD = 'xdpwtbbstyghsbfl'  # os.getenv('EMAIL_HOST_PASSWORD')
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
 EMAIL_USE_SSL = True
 EMAIL_USE_TLS = False
 EMAIL_SERVER = EMAIL_HOST_USER
