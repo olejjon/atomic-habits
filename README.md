@@ -92,15 +92,6 @@ python3 manage.py runserver&celery -A config.celery beat --loglevel=info
 
 To receive notifications, you need to send any message to the ```@habit_rabbit_16102023_bot```.
 
-Example of sending user registration data in Postman:
-
-```shell
-{
-    "email": "test@mail.ru",
-    "password": "123456zxcvbnm",
-    "tg_id": "<your_telegram_id>"
-}
-```
 
 ### Testing
 
